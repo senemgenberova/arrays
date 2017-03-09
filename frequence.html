@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function frequency(array) {
+		var k = 1;
+		var array2 = array.slice(1,array.length);
+		var array3 = [];
+		var max = 0;
+		for(var i =0;i<array.length;i++){
+			for(var j = 0;j<array2.length;j++){
+				if(array[i]==array2[j]){
+					k = k + 1;
+				}
+			}
+			array3.push(k);
+			k = 0;
+			max = array3[0];
+			for(var t=0;t<array3.length;t++){
+				if(array3[t]>max){
+					max = array3[t];
+				}			
+			}
+
+		}
+		var index = array3.indexOf(max) 
+		return "Element: " + array[index] + ' (' + max + " dəfə" + ')';
+		
+	}
+
+	var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+	console.log(frequency(arr1));
+		
+	</script>
+</body>
+</html>
